@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XmlLibraryLab2.Views.MainPage"
+    Title="Lab 2 — XML Library">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+
+            <Label Text="Лабораторна №2 — Робота з XML (SAX/DOM/LINQ + XSLT)" FontAttributes="Bold" />
+
+            <Frame BorderColor="#CCCCCC" CornerRadius="12" Padding="12">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Файли" FontAttributes="Bold" />
+                    <Label Text="{Binding XmlPath}" LineBreakMode="CharacterWrap" />
+                    <Label Text="{Binding XslPath}" LineBreakMode="CharacterWrap" />
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Button Text="Select XML" Command="{Binding SelectXmlCommand}" />
+                        <Button Text="Select XSL" Command="{Binding SelectXslCommand}" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BorderColor="#CCCCCC" CornerRadius="12" Padding="12">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Аналіз (пошук)" FontAttributes="Bold" />
+
+                    <Label Text="Стратегія (API):" />
+                    <Picker ItemsSource="{Binding StrategyNames}"
+                            SelectedItem="{Binding SelectedStrategyName}"
+                            Title="Обери спосіб аналізу" />
+
+                    <Label Text="Атрибут вузла book:" />
+                    <Picker ItemsSource="{Binding AvailableAttributes}"
+                            SelectedItem="{Binding SelectedAttribute}"
+                            Title="(підгружено з XML)" />
+
+                    <Label Text="Значення атрибуту:" />
+                    <Picker ItemsSource="{Binding AvailableAttributeValues}"
+                            SelectedItem="{Binding SelectedAttributeValue}"
+                            Title="(підгружено з XML)" />
+
+                    <Label Text="Keyword (title/annotation/author):" />
+                    <Entry Text="{Binding Keyword}" Placeholder="Напр. DevOps або мережі" />
+
+                    <Label Text="Згенерований запит (preview):" FontAttributes="Bold"/>
+                    <Label Text="{Binding QueryPreview}" LineBreakMode="WordWrap" />
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Button Text="Search" Command="{Binding SearchCommand}" />
+                        <Button Text="Clear" Command="{Binding ClearCommand}" />
+                    </HorizontalStackLayout>
+
+                    <Label Text="Output:" FontAttributes="Bold" />
+                    <Editor Text="{Binding Output}" AutoSize="TextChanges" HeightRequest="220" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BorderColor="#CCCCCC" CornerRadius="12" Padding="12">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Трансформація" FontAttributes="Bold" />
+                    <Button Text="Transform to HTML" Command="{Binding TransformCommand}" />
+                    <Label Text="{Binding HtmlOutputPath}" LineBreakMode="CharacterWrap" />
+                    <Button Text="Open HTML" Command="{Binding OpenHtmlCommand}" IsEnabled="{Binding CanOpenHtml}" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

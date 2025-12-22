@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<library name="KNU Department Library" updated="2025-12-22">
+    <books>
+        <book id="b1" isbn="978-617-00-0001-1" year="2023" lang="uk" copies="3">
+            <author fullName="Іваненко Іван Іванович" />
+            <title>Основи комп'ютерних мереж</title>
+            <annotation>Підручник з базових понять мереж.</annotation>
+            <qualification type="Навчальне видання" level="бакалавр" />
+            <tags>
+                <tag>networks</tag>
+                <tag>linux</tag>
+            </tags>
+        </book>
+
+        <book id="b2" year="2021">
+            <author fullName="Петренко Олексій Петрович" />
+            <title>ООП</title>
+            <annotation>Базові понняття ооп.</annotation>
+            <qualification type="Навчальне видання" />
+        </book>
+
+        <book id="b3" isbn="978-617-00-0003-3" year="2020" lang="en" facultyTag="CS" rating="4.7">
+            <author fullName="Smith John" />
+            <title>Distributed Systems</title>
+            <annotation>Concepts of distributed computing.</annotation>
+            <qualification type="Textbook" level="master" />
+        </book>
+    </books>
+
+    <readers>
+        <reader id="r1" fullName="Потужний Максим" faculty="ФКНК" department="Кафедра ІТ" position="студент" />
+        <reader id="r2" fullName="Коваленко Олена" faculty="ФКНК" department="Кафедра ІТ" position="асистент" />
+    </readers>
+</library>

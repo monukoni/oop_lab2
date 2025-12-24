@@ -22,9 +22,6 @@ public sealed class XmlMetadataService : IXmlMetadataService
                 attrs.Add(a.Name.LocalName);
         }
 
-        // прибираємо часто службові (за бажанням). Я лишаю все, але можна відфільтрувати:
-        // attrs.Remove("id");
-
         var result = attrs.OrderBy(x => x).ToList();
         return Task.FromResult<IReadOnlyList<string>>(result);
     }
